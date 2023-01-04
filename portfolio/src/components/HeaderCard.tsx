@@ -1,47 +1,89 @@
 import { 
         Card, 
-        CardHeader,
         Stack, 
         Image, 
         Heading, 
         Button, 
         CardBody, 
         CardFooter,
-        Text
+        Text,
         } from '@chakra-ui/react'
+import styles from "./HeaderCard.module.css"
+
+import ProfilePic from "../resources/ProfilePic.png"
 
 const HeaderCard = () => {
+
+  const onButtonClick = ()=>{
+    
+      // using Java Script method to get PDF file
+      fetch('Manuel-Benitez-CV-PDF.pdf').then(response => {
+      response.blob().then(blob => {
+      // Creating new object of PDF file
+      const fileURL = window.URL.createObjectURL(blob);
+      // Setting various property values
+      let alink = document.createElement('a');
+      alink.href = fileURL;
+      alink.download = 'Manuel-Benitez-CV-PDF.pdf';
+      alink.click();
+      })
+      })
+      }
     return (
+      <div className={styles.body}>
         <Card
-  direction={{ base: 'column', sm: 'row' }}
-  overflow='hidden'
-  variant='outline'
-  sx={{ backgroundColor:"white", backdropFilter: "blur(6px)" }}
->
-  <Image
-    objectFit='cover'
-    maxW={{ base: '100%', sm: '200px' }}
-    src='https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'
-    alt='Caffe Latte'
-  />
+          direction={{ base: 'column', sm: 'row' }}
+          overflow='hidden'
+          variant='outline'
+          sx={{  
+          color:"white",
+          backdropFilter: "blur(6px)",
+          textAlign:"center",
+          webkitBackdropFilter : "blur(10px)",
+          backgroundColor: "rgba(255, 255, 255, 0.1)",
+          maxWidth: "100%",
+          maxHeight:"50%",
+          
+          }}
+        >
+          <Image
+            objectFit='cover'
+            maxW={{ base: '100%', sm: '300px' }}
 
-  <Stack>
-    <CardBody >
-      <Heading size='md'>The perfect latte</Heading>
+            src={ProfilePic}
+            alt='Caffe Latte'
+          />
 
-      <Text py='2'>
-        Caffè latte is a coffee beverage of Italian origin made with espresso
-        and steamed milk.
-      </Text>
-    </CardBody>
+          <Stack>
+            
+            <CardBody>
+              <Heading 
+                size='2xl' 
+                py="5"
+                bgGradient='linear(to-l, #E07A5F, #F2CC8F)'
+                bgClip='text'
+                fontSize='6xl'
+                fontWeight='extrabold'>
+                Manuel Benitez
+              </Heading>
+              <Text py='3' fontSize={21}>
+                Full Stack Developer - Front End Designer
+              </Text>
+              <Text py='3' >
+                React, Node, Express, Redux, JS, Typescript,
+                Material UI, CSS, Sass, HTML, PostgresSQL, Figma
+              </Text>
+            </CardBody>
 
-    <CardFooter>
-      <Button variant='solid' colorScheme='blue'>
-        Buy Latte
-      </Button>
-    </CardFooter>
-  </Stack>
-</Card>
+            <CardFooter sx={{ justifyContent:"center"}}>
+              <Button variant='solid' color='#F4F1DE' size="lg" sx={{color:"#3D405B", bottom:"10px", padding:"2rem"}}
+              onClick={onButtonClick}>
+                Download CV
+              </Button>
+            </CardFooter>
+          </Stack>
+        </Card>
+        </div>
     )
 }
 
