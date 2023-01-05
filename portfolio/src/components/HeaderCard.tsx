@@ -7,15 +7,19 @@ import {
         CardBody, 
         CardFooter,
         Text,
+        useColorModeValue,
+        
         } from '@chakra-ui/react'
 import styles from "./HeaderCard.module.css"
 
 import ProfilePic from "../resources/ProfilePic.png"
+import ThemeButton from './ThemeButton'
 
 const HeaderCard = () => {
 
+  const color = useColorModeValue('gray.800','white' )  
+
   const onButtonClick = ()=>{
-    
       // using Java Script method to get PDF file
       fetch('Manuel-Benitez-CV-PDF.pdf').then(response => {
       response.blob().then(blob => {
@@ -30,6 +34,10 @@ const HeaderCard = () => {
       })
       }
     return (
+      <> 
+      <div className={styles.themeButton}>
+      <ThemeButton/>
+      </div>
       <div className={styles.body}>
         <Card
           direction={{ base: 'column', sm: 'row' }}
@@ -46,6 +54,7 @@ const HeaderCard = () => {
           
           }}
         >
+          
           <Image
             objectFit='cover'
             maxW={{ base: '100%', sm: '300px' }}
@@ -56,15 +65,15 @@ const HeaderCard = () => {
 
           <Stack>
             
-            <CardBody>
+            <CardBody color={color}>
               <Heading 
                 size='2xl' 
                 py="5"
-                bgGradient='linear(to-l, #E07A5F, #F2CC8F)'
-                bgClip='text'
+                // bgGradient='linear(to-l, #E07A5F, #F2CC8F)'
+                // bgClip='text'
                 fontSize='6xl'
                 fontWeight='extrabold'>
-                Manuel Benitez
+                Hi! I'm Manuel Benitez
               </Heading>
               <Text py='3' fontSize={21}>
                 Full Stack Developer - Front End Designer
@@ -76,14 +85,16 @@ const HeaderCard = () => {
             </CardBody>
 
             <CardFooter sx={{ justifyContent:"center"}}>
-              <Button variant='solid' color='#F4F1DE' size="lg" sx={{color:"#3D405B", bottom:"10px", padding:"2rem"}}
+              <Button variant='solid' color= {color} size="lg" sx={{ bottom:"10px", padding:"2rem"}}
               onClick={onButtonClick}>
                 Download CV
               </Button>
+              
             </CardFooter>
           </Stack>
         </Card>
         </div>
+        </>
     )
 }
 

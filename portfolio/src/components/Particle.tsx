@@ -3,11 +3,16 @@ import { useCallback } from "react";
 import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
+import { useColorModeValue } from "@chakra-ui/react";
 
 const Particle = () => {
 
-    let toggle: boolean = true
+    let toggle: boolean = false
 
+    const color = useColorModeValue('gray.800','white' )
+   
+    if(color==="white") {toggle = true} 
+    if (color === "gray.800") toggle = false
     
     const particlesInit = useCallback(async (engine: Engine) => {
         console.log(engine);
@@ -19,7 +24,7 @@ const Particle = () => {
     }, []);
 
     const particlesLoaded = useCallback(async (container: Container | undefined) => {
-        await console.log(container);
+        console.log(container);
     }, []);
     return (
                 toggle ? 
@@ -42,7 +47,7 @@ const Particle = () => {
                         interactivity: {
                             events: {
                                 onClick: {
-                                    enable: true,
+                                    enable: false,
                                     mode: "push",
                                 },
                                 onHover: {
@@ -73,7 +78,7 @@ const Particle = () => {
                                 width: 1,
                             },
                             collisions: {
-                                enable: true,
+                                enable: false,
                             },
                             move: {
                                 direction: "none",
@@ -125,7 +130,7 @@ const Particle = () => {
                         interactivity: {
                             events: {
                                 onClick: {
-                                    enable: true,
+                                    enable: false,
                                     mode: "push",
                                 },
                                 onHover: {
@@ -156,7 +161,7 @@ const Particle = () => {
                                 width: 1,
                             },
                             collisions: {
-                                enable: true,
+                                enable: false,
                             },
                             move: {
                                 direction: "none",
