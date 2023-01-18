@@ -8,17 +8,19 @@ import {
         CardFooter,
         Text,
         useColorModeValue,
+        useDisclosure,
+        Collapse,
+        Box
         
         } from '@chakra-ui/react'
 import styles from "./HeaderCard.module.css"
-
 import ProfilePic from "../resources/ProfilePic.png"
 import ThemeButton from './ThemeButton'
 
 const HeaderCard = () => {
 
   const color = useColorModeValue('gray.800','white' )  
-
+  const { isOpen, onToggle } = useDisclosure()
   const onButtonClick = ()=>{
       // using Java Script method to get PDF file
       fetch('Manuel-Benitez-CV-PDF.pdf').then(response => {
@@ -67,32 +69,57 @@ const HeaderCard = () => {
             
             <CardBody color={color}>
               <Heading 
+                ml="8px"
+                mr="8px"
                 size='2xl' 
                 py="5"
                 // bgGradient='linear(to-l, #E07A5F, #F2CC8F)'
                 // bgClip='text'
                 fontSize='6xl'
-                fontWeight='extrabold'>
+                fontWeight='700'
+                fontFamily='Syne'>
                 Hi! I'm Manuel Benitez
               </Heading>
-              <Text py='3' fontSize={21}>
+              <Text py='3' fontSize={28}>
                 Full Stack Developer - Front End Designer
               </Text>
-              <Text py='3' >
-                React, Node, Express, Redux, JS, Typescript,
+              <Text py='3' fontSize={20} wordBreak='break-all'>
+                React, Node, Express, Redux, JS, Typescript, <br/>
                 Material UI, CSS, Sass, HTML, PostgresSQL, Figma
               </Text>
             </CardBody>
 
             <CardFooter sx={{ justifyContent:"center"}}>
-              <Button variant='solid' color= {color} size="lg" sx={{ bottom:"10px", padding:"2rem"}}
+              <Button variant='solid' color= {color} size="xlg" sx={{ bottom:"10px", padding:"2rem"}}
               onClick={onButtonClick}>
                 Download CV
               </Button>
-              
+              <Button ml="20px" mt="10px" onClick={onToggle}>Projects</Button>
             </CardFooter>
           </Stack>
         </Card>
+        </div>
+        <div>
+        <Collapse in={isOpen} animateOpacity>
+            <Box
+          p='40px'
+          color='white'
+          mt='4'
+          bg='teal.500'
+          rounded='md'
+          shadow='md'
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quo at iste, error accusantium, eveniet dolorem totam voluptatem eius a sequi distinctio vitae itaque perferendis ipsam nemo molestias quis quas?
+        
+      
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quo at iste, error accusantium, eveniet dolorem totam voluptatem eius a sequi distinctio vitae itaque perferendis ipsam nemo molestias quis quas?
+
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quo at iste, error accusantium, eveniet dolorem totam voluptatem eius a sequi distinctio vitae itaque perferendis ipsam nemo molestias quis quas?
+
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi quo at iste, error accusantium, eveniet dolorem totam voluptatem eius a sequi distinctio vitae itaque perferendis ipsam nemo molestias quis quas?
+
+        </Box>
+      </Collapse>
         </div>
         </>
     )
