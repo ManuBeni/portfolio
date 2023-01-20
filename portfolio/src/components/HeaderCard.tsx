@@ -10,13 +10,12 @@ import {
   useColorModeValue,
   useDisclosure,
   Collapse,
-  Box,
 } from "@chakra-ui/react";
 import styles from "./HeaderCard.module.css";
 import ProfilePic from "../resources/ProfilePic.png";
 import ThemeButton from "./ThemeButton";
-import ProjectsSection from "./ProjectsSection";
 import { motion } from "framer-motion";
+import ProjectsGrid from "./ProjectsGrid";
 
 const HeaderCard = () => {
   const color = useColorModeValue("gray.800", "white");
@@ -40,7 +39,7 @@ const HeaderCard = () => {
       <div className={styles.themeButton}>
         <ThemeButton />
       </div>
-      
+
       <motion.div
         className={styles.body}
         initial={{ opacity: 0 }}
@@ -63,7 +62,7 @@ const HeaderCard = () => {
           <Image
             objectFit="cover"
             maxW={{ base: "100%", sm: "300px" }}
-            sx={{ borderBottomRightRadius: "15:%" }}
+            sx={{ borderBottomRightRadius: "15%" }}
             src={ProfilePic}
             alt="Caffe Latte"
           />
@@ -92,10 +91,16 @@ const HeaderCard = () => {
               </Text>
             </CardBody>
 
-            <CardFooter sx={{ justifyContent: "center" }}>
+            <CardFooter
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "space-evenly",
+              }}
+            >
               <motion.div
                 animate={{ rotate: [0, 0, -20, 20, 0] }}
-                transition={{ duration: 1.8 }}
+                transition={{ duration: 1 }}
               >
                 <Button
                   variant="solid"
@@ -110,19 +115,19 @@ const HeaderCard = () => {
                   Download CV
                 </Button>
               </motion.div>
-              <Button ml="20px" mt="10px" onClick={onToggle} color={color}>
+              <Button mt="10px" onClick={onToggle} color={color}>
                 {isOpen ? "Hide Projects" : "Show Projects"}
+              </Button>
+              <Button mt="10px" color={color}>
+                Contact me! 
               </Button>
             </CardFooter>
           </Stack>
         </Card>
       </motion.div>
-      <div>
-        <Collapse in={isOpen} animateOpacity>
-          <ProjectsSection />
-        </Collapse>
-      </div>
-      
+      <Collapse in={isOpen} animateOpacity>
+          <ProjectsGrid/>
+      </Collapse>
     </>
   );
 };

@@ -16,7 +16,6 @@ const Particle = () => {
   if (color === "gray.800") toggle = false;
 
   const particlesInit = useCallback(async (engine: Engine) => {
-    console.log(engine);
     // This initializes the tsParticles instance (engine) here
     await loadFull(engine);
   }, []);
