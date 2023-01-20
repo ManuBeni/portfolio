@@ -1,26 +1,23 @@
-.body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    margin-top: 8rem;
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin-top: 8vh;
+  
 }
 
-.themeButton{
-    
-    display: flex;
-    flex-direction: row-reverse;
-    
+.themeButton {
+  display: flex;
+  flex-direction: row-reverse;
 }
-
 
 @media only screen and (max-width: 950px) {
-    .body {
-        margin-top:3rem;
-        margin-left: 2.9rem;
-        margin-right: 0rem;
-        padding-right:5rem;
-    }
+  .body {
+    margin-top: 3rem;
+    margin-left: 2.9rem;
+    margin-right: 0rem;
+    padding-right: 5rem;
   }
-  
+}
