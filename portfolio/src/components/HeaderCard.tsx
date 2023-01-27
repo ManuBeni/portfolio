@@ -16,6 +16,7 @@ import ProfilePic from "../resources/ProfilePic.png";
 import ThemeButton from "./ThemeButton";
 import { motion } from "framer-motion";
 import ProjectsGrid from "./ProjectsGrid";
+import Contact from "./Contact";
 
 const HeaderCard = () => {
   const color = useColorModeValue("gray.800", "white");
@@ -34,6 +35,7 @@ const HeaderCard = () => {
       });
     });
   };
+
   return (
     <>
       <div className={styles.themeButton}>
@@ -86,7 +88,7 @@ const HeaderCard = () => {
               </Text>
 
               <Text py="3" fontSize={20} wordBreak="break-all">
-                React, Node, Express, Redux, JS, Typescript, <br />
+                React, Node, Express, Sequelize, Redux, JS, Typescript, <br />
                 Material UI, CSS, Sass, HTML, PostgresSQL, Figma
               </Text>
             </CardBody>
@@ -118,9 +120,7 @@ const HeaderCard = () => {
               <Button mt="10px" onClick={onToggle} color={color}>
                 {isOpen ? "Hide Projects" : "Show Projects"}
               </Button>
-              <Button mt="10px" color={color}>
-                Contact me! 
-              </Button>
+              <Contact></Contact>
             </CardFooter>
           </Stack>
         </Card>
