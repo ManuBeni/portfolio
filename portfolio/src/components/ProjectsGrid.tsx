@@ -69,18 +69,21 @@ const ProjectsGrid = () => {
               I'm happy to say that we passed the assignment with merits!
             </Text>
           </CardBody>
-          <CardFooter>
+          <CardFooter style={{
+            display:"flex",
+            flexWrap:"wrap"
+          }}>
             <Link href="http://athens-theta.vercel.app/" isExternal>
-              <Button>View here</Button>
+              <Button mr="2">View here</Button>
             </Link>
             <Link href="https://github.com/mas2986/PG_Front.git" isExternal>
-            <Button ml="2">Github repo</Button>
+            <Button mr="2">Github repo</Button>
             </Link>
             <Link
               href="https://www.figma.com/file/yakoREjsnKFagDZSgrSKeV/Manuel-Benitez's-team-library?node-id=0%3A1"
               isExternal
             >
-              <Button ml="2">Figma Mockup</Button>
+              <Button>Figma Mockup</Button>
             </Link>
           </CardFooter>
         </Card>
