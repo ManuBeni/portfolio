@@ -38,7 +38,7 @@ const ProjectsGrid = () => {
           </CardHeader>
           <CardBody>
             <Text fontSize="lg">
-              This was the final project of the "Henry" bootcamp in which I
+              The "Athens" e-commerce project was the final full-stack project of the "Henry" bootcamp in which I
               cooperated with another 7 students.
               <br />
               <br />
@@ -93,7 +93,7 @@ const ProjectsGrid = () => {
           <CardBody>
             <Text fontSize="lg">
               
-              This was an individual project from the "Henry" full stack
+              The Dog Breed Finder was an individual full-stack project from the "Henry"
               bootcamp, which had to be completed in less than 3 weeks.
               <br />
               <br />
@@ -108,7 +108,7 @@ const ProjectsGrid = () => {
               * Sequelize - Postgres
               <br />
               <br />
-              I made use of an external api (thedogapi.com), populated my own database, created filters and a controlled form to create new data.
+              I made use of an external api (thedogapi.com), populated my own database, created filters and a controlled form to create new data to store.
               <br />
             </Text>
           </CardBody>

@@ -38,15 +38,14 @@ const HeaderCard = () => {
 
   return (
     <>
-      <div className={styles.themeButton}>
-        <ThemeButton />
-      </div>
-
       <motion.div
         className={styles.body}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
       >
+      <div className={styles.themeButton}>
+        <ThemeButton />
+      </div>
         <Card
           direction={{ base: "column", sm: "row" }}
           overflow="hidden"
