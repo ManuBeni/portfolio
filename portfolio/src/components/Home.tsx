@@ -20,15 +20,15 @@ const Home = () => {
             justifyContent:"space-around",
             // alignItems:"center"
         }}>
-            <a href="https://github.com/ManuBeni">
+            <a target="_blank" href="https://github.com/ManuBeni">
                 <AiFillGithub size={70}/>
             </a>  
             
-            <a href="https://www.linkedin.com/in/manuel--benitez/">
+            <a target="_blank" href="https://www.linkedin.com/in/manuel--benitez/">
                 <AiOutlineLinkedin size={70}/>
             </a> 
             
-            <a href="mailto:manubeni0498@gmail.com">
+            <a target="_blank" href="mailto:manubeni0498@gmail.com">
                 <SiGmail size={70}/>
             </a> 
         </div>
