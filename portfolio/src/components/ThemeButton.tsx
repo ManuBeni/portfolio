@@ -5,7 +5,7 @@ function ThemeButton() {
   return (
     <header>
       <Button onClick={toggleColorMode}>
-        Toggle {colorMode === "light" ? "Dark" : "Light"}
+        Toggle {colorMode === "light" ? "Dark" : "Light"} Mode
       </Button>
     </header>
   );
