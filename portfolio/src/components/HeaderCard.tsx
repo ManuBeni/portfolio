@@ -23,14 +23,14 @@ const HeaderCard = () => {
   const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: false });
   const onButtonClick = () => {
     // using Java Script method to get PDF file
-    fetch("Manuel-Benitez-CV-PDF.pdf").then((response) => {
+    fetch("Manuel-Benitez-CV-English.pdf").then((response) => {
       response.blob().then((blob) => {
         // Creating new object of PDF file
         const fileURL = window.URL.createObjectURL(blob);
         // Setting various property values
         let alink = document.createElement("a");
         alink.href = fileURL;
-        alink.download = "Manuel-Benitez-CV-PDF.pdf";
+        alink.download = "Manuel-Benitez-CV-English.pdf";
         alink.click();
       });
     });
