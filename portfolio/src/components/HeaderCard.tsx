@@ -56,16 +56,21 @@ const HeaderCard = () => {
             textAlign: "center",
             webkitBackdropFilter: "blur(10px)",
             backgroundColor: "rgba(255, 255, 255, 0.1)",
-            maxWidth: "100%",
-            maxHeight: "50%",
+            // maxWidth: "100%",
+            // maxHeight: "100%",
           }}
         >
           <Image
+            className="header-image"
             objectFit="cover"
-            maxW={{ base: "100%", sm: "300px" }}
-            sx={{ borderBottomRightRadius: "15%" }}
+            alignSelf="center"
+            mb={["-1rem","0"]}
+            maxW={{ base: "200px", sm: "350px" }}
+            borderBottomLeftRadius={{md:"1px"}}
+            borderRadius={["full", "15%"]}
+            mt={["0.2rem","0"]}
             src={ProfilePic}
-            alt="Caffe Latte"
+            alt="Loading..."
           />
 
           <Stack>
@@ -73,20 +78,20 @@ const HeaderCard = () => {
               <Heading
                 ml="8px"
                 mr="8px"
-                size="2xl"
+                // size={["xl","3xl"]}
                 py="5"
-                fontSize="4rem"
+                fontSize={["2.2em","4em"]}
                 fontWeight="700"
                 fontFamily="Syne"
               >
                 Hi! I'm Manuel Benitez
               </Heading>
 
-              <Text py="3" fontSize={28}>
+              <Text py={["0","3"]} fontSize={["24","28"]}>
                 Full Stack Developer - Front End Designer
               </Text>
 
-              <Text py="3" fontSize={20} wordBreak="break-all">
+              <Text py="3" fontSize={["18","20"]} display={["none","block"]}>
                 React, Node, Express, Sequelize, Redux, JS, Typescript, <br />
                 Material UI, CSS, Sass, HTML, PostgresSQL, Figma
               </Text>
@@ -98,6 +103,7 @@ const HeaderCard = () => {
                 flexWrap: "wrap",
                 justifyContent: "space-evenly",
               }}
+              flexDirection={["column", "row"]}
             >
               <motion.div
                 animate={{ rotate: [0, 0, -20, 20, 0] }}
@@ -111,6 +117,7 @@ const HeaderCard = () => {
                     bottom: "10px",
                     padding: "2rem",
                   }}
+                  mt={["-1rem","0"]}
                   onClick={onButtonClick}
                 >
                   Download CV
