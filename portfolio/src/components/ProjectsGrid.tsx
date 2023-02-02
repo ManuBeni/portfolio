@@ -27,7 +27,7 @@ const ProjectsGrid = () => {
               Athens - Sports apparel and accessories e-commerce
             </Text>
             <br />
-            <a target="_blank" href="https://athens-theta.vercel.app/">
+            <a target="_blank" rel="noreferrer" href="https://athens-theta.vercel.app/">
               <img
                 src="https://user-images.githubusercontent.com/85205823/192325244-1e46ba81-e6da-4f26-b3f0-ff3fd068a8eb.gif"
                 width="700"
@@ -72,7 +72,10 @@ const ProjectsGrid = () => {
           <CardFooter style={{
             display:"flex",
             flexWrap:"wrap"
-          }}>
+          }}
+          flexDirection={["column", "row"]}
+          rowGap="1em"
+          >
             <Link href="http://athens-theta.vercel.app/" isExternal>
               <Button mr="2">View here</Button>
             </Link>

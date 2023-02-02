@@ -22,7 +22,7 @@ const Particle = () => {
 
   const particlesLoaded = useCallback(
     async (container: Container | undefined) => {
-      console.log(container);
+      
     },
     []
   );
