@@ -9,7 +9,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import dogGif from "../resources/simplescreenrecorder-2-6uyah0kx_OUzpg5UW.gif";
+import dogGif from "../../resources/simplescreenrecorder-2-6uyah0kx_OUzpg5UW.gif";
 
 const ProjectsGrid = () => {
   const bg = {

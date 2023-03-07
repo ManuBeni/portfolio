@@ -1,4 +1,4 @@
-import HeaderCard from "./HeaderCard";
+import HeaderCard from "../HeaderCard";
 import { AiFillGithub, AiOutlineLinkedin } from "react-icons/ai";
 import { SiGmail } from "react-icons/si";
 const Home = () => {

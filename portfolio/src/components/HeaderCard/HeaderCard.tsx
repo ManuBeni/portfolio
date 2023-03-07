@@ -12,11 +12,11 @@ import {
   Collapse,
 } from "@chakra-ui/react";
 import styles from "./HeaderCard.module.css";
-import ProfilePic from "../resources/ProfilePic.png";
-import ThemeButton from "./ThemeButton";
+import ProfilePic from "../../resources/ProfilePic.png";
+import ThemeButton from "../ThemeButton";
 import { motion } from "framer-motion";
-import ProjectsGrid from "./ProjectsGrid";
-import Contact from "./Contact";
+import ProjectsGrid from "../ProjectsGrid";
+import Contact from "../Contact";
 
 const HeaderCard = () => {
   const color = useColorModeValue("gray.800", "white");
